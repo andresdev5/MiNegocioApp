@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "7f1d544f-e04b-44f2-a19f-b46492b6eff9",
+		"name": "mi negocio api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2406318"
+	},
+	"item": [
+		{
+			"name": "GET users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET users (search)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users?names=john doe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "names",
+							"value": "john doe"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET users/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET users/{id}/addresses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/1/addresses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"1",
+						"addresses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"identificationType\": \"CI\",\r\n    \"identificationValue\": \"1765987425\",\r\n    \"names\": \"Paul Doe\",\r\n    \"email\": \"pauldoe@gmail.com\",\r\n    \"phone\": \"0998591832\",\r\n    \"addressProvinceId\": 17,\r\n    \"addressCityId\": 178,\r\n    \"addressDescription\": \"Centro Historico Calle Galapagos\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE user/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT users/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"identificationType\": \"CI\",\r\n    \"identificationValue\": \"1726744287\",\r\n    \"names\": \"Walt doe\",\r\n    \"email\": \"waltdoe@gmail.com\",\r\n    \"phone\": \"0998598515\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST users/{id}/addresses",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"provinceId\": 17,\r\n    \"cityId\": 178,\r\n    \"description\": \"Av. El Inca y Buenos Aires\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/1/addresses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"1",
+						"addresses"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
