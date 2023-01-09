@@ -65,3 +65,9 @@ Esta colección incluye las peticiones para las rutas de la api:
 ## Coleccion de POSTMAN:
 
 ![Coleccion de postman](https://i.imgur.com/lc0WLBB.png "Coleccion de postman")
+
+---
+
+## Compatibilidad con IDE
+
+El proyecto debería ser compatible con la mayoría de IDEs sin embargo, se incluye un archivo .iml para facilitar el uso en **Jetbrains intellij IDEA** IDE en el cual fue desarrollado el proyecto.
