@@ -6,11 +6,11 @@ Aplicacion de reclutamiento realizada para unexustech.
 
 ---
 
-## Requerimentos
+## Requerimientos
 
-- JDK >= 8
+- Tested on JDK 19
 - Postgresql
-- maven
+- Maven
 
 Antes de ejecutar el proyecto maven es necesario crear 2 base de datos `minegocio` y `minegocio-test`. Estas se pueden crear ejecutando el archivo `setup_db.cmd`.
 
@@ -39,7 +39,7 @@ CREATE DATABASE minegocio WITH ENCODING 'UTF8';
 CREATE DATABASE minegocio-test WITH ENCODING 'UTF8';
 ```
 
-## Generacion del schema de base de datos al inicio (spring oot database initialization)
+## Generacion del schema de base de datos al inicio (Spring Boot database initialization)
 
 La aplicación esta configurada para que al iniciar cree el esquema necesario (tablas, tipos, etc) y también inserte valores por defecto, sin embargo los datos se pierden por que ocurre varios `DROP TABLE`. Se puede modificar `aplication.properties` para que no se ejecute el schema denuevo.
 
@@ -61,6 +61,29 @@ Esta colección incluye las peticiones para las rutas de la api:
 - **PUT** `/api/users/{id}` edita un usuario por id
 - **DELETE** `/api/users/{id}` elimina un usuario por id
 - **POST** `/api/users/{id}/addresses` agrega una direccion a un usuario.
+
+al insertar un usuario con el endpoint **POST** `api/users` para insertar la ciudad y provincia de la dirección principal, se requieren los campos `addressCityId`, `addressProvinceId`, El campo que describe la dirección es `addressDescription`.
+
+**Ejemplo de un json para crear un nuevo usuario:**
+
+```json
+{
+    "identificationType": "CI",
+    "identificationValue": "1765987425",
+    "names": "Paul Doe",
+    "email": "pauldoe@gmail.com",
+    "phone": "0998591832",
+    "addressProvinceId": 17,
+    "addressCityId": 178,
+    "addressDescription": "Centro Historico Calle Galapagos"
+}
+```
+
+El id de provincia `17` pertenece a la provincia **Pichincha** y el id de ciudad `178` pertenece a la ciudad **Quito**. Estos valores pueden verse en la base de datos.
+
+**TO-DO:** crear un endpoint para obtener ciudades (GET /api/cities)
+
+---
 
 ## Coleccion de POSTMAN:
 
